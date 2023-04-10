@@ -26,6 +26,10 @@ nav {
 }
 
 
+#contact-me {
+    font-weight: bold;
+}
+
 nav img {
     width: 55px;
     margin: 10px 50px 0px 0px;
@@ -42,6 +46,31 @@ nav img {
     text-decoration: none;
     font-size: 18px;
 }
+
+
+.hamburger-nav {
+    display: none;
+    font-size: 20px;
+}
+
+.hamburger-nav a{
+    color: white;
+    background-color: #111727;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid whitesmoke;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#menu {
+    background-color: transparent; 
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+/* navbar styling */
 
 /* contactMe.html styling */
 
@@ -87,7 +116,7 @@ textarea {
     resize: none;
 }
 
-button {
+.button-submit {
     color: white;
     background-color: #111727;
     border: 1px solid #111727;
@@ -96,4 +125,52 @@ button {
     position: relative;
     left: 380px;
     font-size: 17px;
+}
+
+
+@media only screen and (max-width: 600px) {
+/* nav responsive styling  */
+    nav {
+        padding: 0px;
+    }
+    nav img {
+        margin: 0px;
+    }
+
+    .nav-right {
+        padding-right: 80px;
+        display: none;
+    }
+    .nav-right a {
+        margin: 0px;
+    }
+
+    .nav-left ul {
+        padding-left: 50px;
+    }
+
+    #menu {
+        display: block;
+    }
+    .nav-left-hamburger {
+        display: none;
+    }
+    
+    .hamburger-nav{
+        display: none;
+    }
+/* nav responsive styling  */
+
+    h1 {
+        width: 50%;
+        font-size: 25px;
+        text-align: center;
+    }
+    form{
+        width: 70%;
+    }
+
+    .button-submit {
+        left: 290px;
+    }
 }

@@ -35,6 +35,8 @@ a.click();
     console.log(data);
 }
 
+
+
 let projects = []
 
 function getProject(event){
@@ -76,46 +78,49 @@ function renderBlog() {
     
     for(let i = 0; i < projects.length; i++) {
         document.getElementById("contents").innerHTML += `
-            <div class="inner-project" id="contents">
-                <div>
-                    <img src="${projects[i].image}" alt="project-img">
-                </div>
-            
-                <div class="project-title">
-                    <a href="myProjectDetail.html">
-                        <h3>${projects[i].projectName}</h3> 
-                    </a>
-                </div>
+        <div class="flex-style">
+                <div class="project-detail">
+                    <div class="inner-project" id="contents">
+                        <div>
+                            <img src="${projects[i].image}" alt="project-img">
+                        </div>
+                    
+                        <div class="project-title">
+                            <a href="myProjectDetail.html">
+                                <h3>${projects[i].projectName}</h3> 
+                            </a>
+                        </div>
 
-                <div class="duration">
-                    <p>${getDuration(projects[i].startDate, projects[i].endDate)}</p> 
-                </div>
+                        <div class="duration">
+                            <p>Duration : ${getDuration(projects[i].startDate, projects[i].endDate)}</p> 
+                        </div>
 
-                <div class="project-desc">
-                    <p>${projects[i].description}</p>
-                </div>
+                        <div class="project-desc">
+                            <p>${projects[i].description}</p>
+                        </div>
 
-                <div class="logo-tech">
-                    ${projects[i].nodeJS ? "<img src='./assets/img/node.js.png'>" : ""}
-                    ${projects[i].nextJS ? "<img src='./assets/img/next.js.png'>" : ""}
-                    ${projects[i].reactJS ? "<img src='./assets/img/react.js.png'>" : ""}
-                    ${projects[i].typeScript ? "<img src='./assets/img/typescript.png'>" : ""}
-                </div>
-
-                <div class="project-button">
-                    <div class="edit">
-                        <button>edit</button>
+                        <div class="logo-tech">
+                            ${projects[i].nodeJS ? "<img src='./assets/img/node.js.png'>" : ""}
+                            ${projects[i].nextJS ? "<img src='./assets/img/next.js.png'>" : ""}
+                            ${projects[i].reactJS ? "<img src='./assets/img/react.js.png'>" : ""}
+                            ${projects[i].typeScript ? "<img src='./assets/img/typescript.png'>" : ""}
+                        </div>
+                        
+                        <div class="project-button">
+                            <div class="edit">
+                                <button>edit</button>
+                            </div>
+                            
+                            <div class="delete">
+                                <button>delete</button>
+                            </div>
+                        </div>    
                     </div>
-
-                    <div class="delete">
-                        <button>delete</button>
-                    </div>
-                </div>    
-            </div>`
+                </div>
+            </div>
+        </div>`
     }
 }
-
-// there are still errors at some points
 
 function getDuration(startDate, endDate) {
     const distance = new Date(endDate) - new Date(startDate)
@@ -136,6 +141,23 @@ function getDuration(startDate, endDate) {
   }
 
 
+//   function for Hamburger Menu
+
+let menuHamburger = false;
+function menuHamburgerNav() {
+    let hamburgerNav = document.getElementById("hamburger-nav")
+    if(!menuHamburger) {
+        hamburgerNav.style.display = "block";
+        menuHamburger = true;
+    } else {
+        hamburgerNav.style.display = "none";
+        menuHamburger = false;
+    }
+}
+
+
+
+
   
 // part upgrade
 
@@ -150,3 +172,4 @@ function getDuration(startDate, endDate) {
 //     } else if (image == ""){
 //         return alert("Please upload your image from computer")
 // };
+
